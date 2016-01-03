@@ -1,7 +1,7 @@
-require 'craigslist_scraper/craigslist'
+require 'craigslist_scraper/search'
 
-describe CraigsList do
-  let!(:craigslist) { CraigsList.new }
+describe CraigslistScraper::Search do
+  let!(:craigslist) { CraigslistScraper::Search.new }
   
   describe ".search" do
     before do
@@ -59,7 +59,7 @@ describe CraigsList do
   describe "dynamic method search_{cityname}_for" do
     it "calls search for a valid city" do
       allow(craigslist).to receive(:search)
-      city = CraigsList::CITIES.first 
+      city = CraigslistScraper::Search::CITIES.first 
         
       craigslist.send("search_#{city}_for")
 
@@ -83,7 +83,7 @@ describe CraigsList do
   describe "dynamic method search_titles_in_{cityname}_for" do
     
     it "calls search for a valid city" do
-      city = CraigsList::CITIES.first
+      city = CraigslistScraper::Search::CITIES.first
       allow(craigslist).to receive(:search)
         
       craigslist.send("search_titles_in_#{city}_for")

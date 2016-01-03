@@ -1,6 +1,6 @@
 require "craigslist_scraper/version"
-require "craigslist_scraper/craigslist"
+require "craigslist_scraper/search"
 
 module CraigslistScraper
-  autoload :CraigsList, 'craigslist_scraper/craigslist'
+  # autoload :Search, 'craigslist_scraper/search'
 end
